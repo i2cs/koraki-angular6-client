@@ -20,6 +20,7 @@ import { Observable }                                        from 'rxjs';
 
 import { ApiErrorModel } from '../model/apiErrorModel';
 import { ApplicationCreateDataModel } from '../model/applicationCreateDataModel';
+import { ApplicationUpdateDataModel } from '../model/applicationUpdateDataModel';
 import { ApplicationViewDataModel } from '../model/applicationViewDataModel';
 import { PageResultApplicationViewDataModel } from '../model/pageResultApplicationViewDataModel';
 
@@ -264,10 +265,10 @@ export class ApplicationsService {
      * @param observe set whether or not to return the data Observable as the body, response or events. defaults to returning the body.
      * @param reportProgress flag to report request and response progress.
      */
-    public updateApplication(id: number, applicationModel?: ApplicationCreateDataModel, observe?: 'body', reportProgress?: boolean): Observable<ApplicationViewDataModel>;
-    public updateApplication(id: number, applicationModel?: ApplicationCreateDataModel, observe?: 'response', reportProgress?: boolean): Observable<HttpResponse<ApplicationViewDataModel>>;
-    public updateApplication(id: number, applicationModel?: ApplicationCreateDataModel, observe?: 'events', reportProgress?: boolean): Observable<HttpEvent<ApplicationViewDataModel>>;
-    public updateApplication(id: number, applicationModel?: ApplicationCreateDataModel, observe: any = 'body', reportProgress: boolean = false ): Observable<any> {
+    public updateApplication(id: number, applicationModel?: ApplicationUpdateDataModel, observe?: 'body', reportProgress?: boolean): Observable<ApplicationViewDataModel>;
+    public updateApplication(id: number, applicationModel?: ApplicationUpdateDataModel, observe?: 'response', reportProgress?: boolean): Observable<HttpResponse<ApplicationViewDataModel>>;
+    public updateApplication(id: number, applicationModel?: ApplicationUpdateDataModel, observe?: 'events', reportProgress?: boolean): Observable<HttpEvent<ApplicationViewDataModel>>;
+    public updateApplication(id: number, applicationModel?: ApplicationUpdateDataModel, observe: any = 'body', reportProgress: boolean = false ): Observable<any> {
         if (id === null || id === undefined) {
             throw new Error('Required parameter id was null or undefined when calling updateApplication.');
         }

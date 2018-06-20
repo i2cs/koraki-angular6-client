@@ -16,6 +16,7 @@ export interface NotificationViewDataModel {
     notificationText?: string;
     thumbnailUrl?: string;
     variables?: string;
+    location?: string;
     createdOn?: Date;
     id?: number;
 }

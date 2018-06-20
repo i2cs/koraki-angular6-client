@@ -16,6 +16,7 @@ export interface NotificationCreateDataModel {
     notificationText?: string;
     thumbnailUrl?: string;
     variables?: string;
+    group?: string;
     location?: string;
 }
 export namespace NotificationCreateDataModel {

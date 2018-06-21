@@ -18,6 +18,7 @@ export interface ApplicationViewDataModel {
     clientId?: string;
     clientSecret?: string;
     analyticsId?: string;
+    analyticsToken?: string;
     url: string;
     notificationsCount?: number;
     lastNotificationTime?: Date;

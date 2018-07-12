@@ -1,4 +1,4 @@
-## koraki-angular-client@0.0.20
+## koraki-angular-client@0.0.46
 
 ### Building
 
@@ -19,7 +19,7 @@ Navigate to the folder of your consuming project and run one of next commands.
 _published:_
 
 ```
-npm install koraki-angular-client@0.0.20 --save
+npm install koraki-angular-client@0.0.46 --save
 ```
 
 _without publishing (not recommended):_

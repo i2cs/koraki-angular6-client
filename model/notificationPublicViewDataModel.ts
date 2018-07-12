@@ -11,25 +11,16 @@
  */
 
 
-export interface NotificationViewDataModel { 
-    status?: NotificationViewDataModel.StatusEnum;
+export interface NotificationPublicViewDataModel { 
     notificationText?: string;
     thumbnailUrl?: string;
+    createdOnWord?: string;
     variables?: string;
-    location?: string;
     createdOn?: Date;
-    type?: NotificationViewDataModel.TypeEnum;
+    type?: NotificationPublicViewDataModel.TypeEnum;
     id?: number;
 }
-export namespace NotificationViewDataModel {
-    export type StatusEnum = 'Created' | 'Processing' | 'Ready' | 'Hidden' | 'Removed';
-    export const StatusEnum = {
-        Created: 'Created' as StatusEnum,
-        Processing: 'Processing' as StatusEnum,
-        Ready: 'Ready' as StatusEnum,
-        Hidden: 'Hidden' as StatusEnum,
-        Removed: 'Removed' as StatusEnum
-    };
+export namespace NotificationPublicViewDataModel {
     export type TypeEnum = 'Normal' | 'AnalyticsLive' | 'AnalyticsCountry' | 'AnalyticsCity' | 'AnalyticsHour';
     export const TypeEnum = {
         Normal: 'Normal' as TypeEnum,

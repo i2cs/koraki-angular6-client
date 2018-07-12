@@ -20,9 +20,12 @@ export interface ApplicationViewDataModel {
     analyticsId?: string;
     analyticsToken?: string;
     url: string;
-    notificationsCount?: number;
+    totalNotificationsCount?: number;
+    activeNotificationsCount?: number;
     lastNotificationTime?: Date;
     lastNotificationSeconds?: number;
+    notificationMaximumDurationDays?: number;
+    notificationMaximumActiveCount?: number;
     createdOn?: Date;
     id?: number;
 }

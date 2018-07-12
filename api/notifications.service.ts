@@ -247,49 +247,6 @@ export class NotificationsService {
     }
 
     /**
-     * Gets all public notifications of an application identified by the key
-     * This is a public call and header authorization is not required
-     * @param key Application key (Client Id)
-     * @param observe set whether or not to return the data Observable as the body, response or events. defaults to returning the body.
-     * @param reportProgress flag to report request and response progress.
-     */
-    public getAllNotificationsByKey(key?: string, observe?: 'body', reportProgress?: boolean): Observable<Array<NotificationViewDataModel>>;
-    public getAllNotificationsByKey(key?: string, observe?: 'response', reportProgress?: boolean): Observable<HttpResponse<Array<NotificationViewDataModel>>>;
-    public getAllNotificationsByKey(key?: string, observe?: 'events', reportProgress?: boolean): Observable<HttpEvent<Array<NotificationViewDataModel>>>;
-    public getAllNotificationsByKey(key?: string, observe: any = 'body', reportProgress: boolean = false ): Observable<any> {
-
-        let queryParameters = new HttpParams({encoder: new CustomHttpUrlEncodingCodec()});
-        if (key !== undefined && key !== null) {
-            queryParameters = queryParameters.set('key', <any>key);
-        }
-
-        let headers = this.defaultHeaders;
-
-        // to determine the Accept header
-        let httpHeaderAccepts: string[] = [
-            'application/json'
-        ];
-        const httpHeaderAcceptSelected: string | undefined = this.configuration.selectHeaderAccept(httpHeaderAccepts);
-        if (httpHeaderAcceptSelected != undefined) {
-            headers = headers.set('Accept', httpHeaderAcceptSelected);
-        }
-
-        // to determine the Content-Type header
-        const consumes: string[] = [
-        ];
-
-        return this.httpClient.get<Array<NotificationViewDataModel>>(`${this.basePath}/api/v1.0/Notifications/public`,
-            {
-                params: queryParameters,
-                withCredentials: this.configuration.withCredentials,
-                headers: headers,
-                observe: observe,
-                reportProgress: reportProgress
-            }
-        );
-    }
-
-    /**
      * Gets single notification identified by notification id
      * Includes basic application data.  Retrieves application id from either ApplicationId query parameter or extracted from long living token. If long living token is passed via header &#x60;Authorization: Bearer [token]&#x60;, ApplicationId query parameter is ignored.
      * @param id Notification id

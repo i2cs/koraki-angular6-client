@@ -15,6 +15,8 @@ export interface ApplicationUpdateDataModel {
     status?: ApplicationUpdateDataModel.StatusEnum;
     applicationName?: string;
     url?: string;
+    notificationMaximumDurationDays?: number;
+    notificationMaximumActiveCount?: number;
 }
 export namespace ApplicationUpdateDataModel {
     export type StatusEnum = 'Created' | 'Active' | 'Disabled' | 'DuePayment';
